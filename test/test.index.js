@@ -87,6 +87,52 @@ test('register() view w/ callback and express() it', function(t) {
 	});
 });
 
+test('register() actions and views with valid schema', function(t) {
+	var api = new Api();
+
+	t.plan(2);
+	api.register({
+		actions: [
+			{
+				name: 'Some Action',
+				pattern: {
+					ns: 'test'
+				},
+				handler: function(ctxt, action) {
+					return !!action;
+				}
+			}
+		]
+	}, function(err) {
+		t.ok(!err);
+	});
+
+	api.register({
+		views: [
+			{
+				name: 'Some View with a handler arity of 2',
+				pattern: {
+					ns: 'test'
+				},
+				handler: function(ctxt, view) {
+					return !!view;
+				}
+			},
+			{
+				name: 'Some View with a handler arity of 3',
+				pattern: {
+					ns: 'test'
+				},
+				handler: function(ctxt, view, done) {
+					return !!done;
+				}
+			}
+		]
+	}, function(err) {
+		t.ok(!err);
+	});
+});
+
 test('register() actions and views with invalid schema', function(t) {
 	var api = new Api();
 
