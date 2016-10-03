@@ -86,3 +86,24 @@ test('register() view w/ callback and express() it', function(t) {
 		});
 	});
 });
+
+test('register() actions and views with invalid schema', function(t) {
+	var api = new Api();
+
+	t.plan(2);
+	api.register({
+		actions: [
+			{invalid: true}
+		]
+	}, function(err) {
+		t.ok(err);
+	});
+
+	api.register({
+		views: [
+			{invalid: true}
+		]
+	}, function(err) {
+		t.ok(err);
+	});
+});
