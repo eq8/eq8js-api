@@ -3,7 +3,7 @@
 var test = require('tape');
 var Api = require('../index.js');
 
-test('register() an action and state() it', function(t) {
+test('register() an action w/o callback and state() it', function(t) {
 	var api = new Api();
 	var testPattern = {
 		ns: 'test',
@@ -26,6 +26,34 @@ test('register() an action and state() it', function(t) {
 		t.ok(!err);
 
 		api.state(testContext, testPattern);
+	});
+});
+
+test('register() an action w/ callback and state() it', function(t) {
+	var api = new Api();
+	var testPattern = {
+		ns: 'test',
+		cmd: 'test',
+		v: '0.1'
+	};
+	var testContext = 'some arbitrary context object';
+
+	t.plan(4);
+	api.register({actions: [
+		{
+			name: 'test action',
+			pattern: testPattern,
+			handler: function(context, args) {
+				t.equal(context, testContext);
+				t.equal(args, testPattern);
+			}
+		}
+	]}, function(err) {
+		t.ok(!err);
+
+		api.state(testContext, testPattern, function() {
+			t.pass();
+		});
 	});
 });
 
