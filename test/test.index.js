@@ -43,9 +43,10 @@ test('register() an action w/ callback and state() it', function(t) {
 		{
 			name: 'test action',
 			pattern: testPattern,
-			handler: function(context, args) {
+			handler: function(context, args, done) {
 				t.equal(context, testContext);
 				t.equal(args, testPattern);
+				done();
 			}
 		}
 	]}, function(err) {
