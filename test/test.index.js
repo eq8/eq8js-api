@@ -182,3 +182,13 @@ test('register() actions and views with invalid schema', function(t) {
 		t.ok(err);
 	});
 });
+
+test('express() a view that does not exist', function(t) {
+	var api = new Api();
+
+	t.plan(1);
+
+	api.express(null, null);
+
+	t.pass();
+});
