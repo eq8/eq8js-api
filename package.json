@@ -74,7 +74,7 @@
     "npm-shrinkwrap": "6.0.2",
     "nsp": "2.6.2",
     "plato": "1.7.0",
-    "semantic-release": "4.3.5",
+    "semantic-release": "6.3.2",
     "tape": "4.6.2",
     "validate-commit-msg": "2.8.2"
   },
