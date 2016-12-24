@@ -58,7 +58,7 @@
     "bloomrun": "2.3.0",
     "eq8-core": "1.0.4",
     "joi": "9.2.0",
-    "lodash": "4.17.2",
+    "lodash": "4.17.3",
     "rx": "4.1.0"
   },
   "devDependencies": {
