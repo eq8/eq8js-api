@@ -56,7 +56,7 @@
   "dependencies": {
     "async": "2.4.0",
     "bloomrun": "2.3.0",
-    "eq8-core": "1.0.7",
+    "eq8-core": "2.0.0",
     "joi": "9.2.0",
     "lodash": "4.17.4",
     "rx": "4.1.0"
