@@ -50,7 +50,7 @@
   },
   "homepage": "https://eq8.js.org",
   "engines": {
-    "node": ">=4.5.0",
+    "node": ">=6",
     "npm": ">=2.15.9 <3.0.0"
   },
   "dependencies": {
