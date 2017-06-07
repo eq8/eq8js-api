@@ -17,9 +17,6 @@
     "analyze": "plato -d analysis index.js ./lib/index.js ./lib/registrars/*.js ./lib/api/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "publishConfig": {
-    "tag": "next"
-  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run lint",
@@ -28,11 +25,6 @@
     },
     "validate-commit-msg": {
       "helpMessage": "allowed types: feat, fix, docs, style, refactor, perf, test, chore, revert"
-    }
-  },
-  "release": {
-    "fallbackTags": {
-      "next": "latest"
     }
   },
   "repository": {
